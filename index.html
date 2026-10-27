@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Tapadia City Centre (TCC) Mall | Amravati</title>
+  <meta name="description" content="Tapadia City Centre (TCC) Mall is Amravati's premier shopping, dining, and entertainment destination, Western Vidarbha's first complete modern mall.">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION BAR (CLEAN LIGHT DESIGN + MULTI-LANGUAGE SWITCHER)
+       ========================================================================== -->
+  <header>
+    <nav class="tcc-navbar" id="mainNavbar">
+      <div class="nav-container">
+        <a href="#heroScrollWrapper" class="nav-brand" aria-label="Tapadia City Centre Home">
+          <img src="assets/img/tcc-logo.svg" alt="TCC Logo" class="nav-logo-img">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#heroScrollWrapper" class="nav-link active" data-i18n="nav_3d">3D Vision</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">About TCC</a></li>
+          <li><a href="#diwali-offers" class="nav-link" style="color:var(--gold-dark); font-weight:700;" data-i18n="nav_diwali">🪔 Diwali Offers</a></li>
+          <li><a href="#partners" class="nav-link" data-i18n="nav_partners">Partners</a></li>
+          <li><a href="#highlights" class="nav-link" data-i18n="nav_shopping">Shopping & Dining</a></li>
+          <li><a href="#plan-visit" class="nav-link" data-i18n="nav_visit">Plan Visit</a></li>
+          <li><a href="#mobile-app" class="nav-link" data-i18n="nav_app">Mobile App</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Leasing & Helpdesk</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Multi-Language Switcher (English, Marathi, Hindi) -->
+          <div class="lang-switcher" role="group" aria-label="Select Language">
+            <button class="lang-btn active" data-lang="en" title="English">EN</button>
+            <button class="lang-btn" data-lang="mr" title="मराठी (Marathi)">मराठी</button>
+            <button class="lang-btn" data-lang="hi" title="हिंदी (Hindi)">हिंदी</button>
+          </div>
+
+          <!-- Live Operating Hours Status Pill -->
+          <div id="liveMallStatusPill" class="d-none d-xl-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill" style="font-size:12px; font-weight:700; border:1px solid #e2e8f0; background:#f8fafc; color:#475569;">
+            <span data-i18n="status_checking">● CHECKING OPERATING HOURS...</span>
+          </div>
+
+          <!-- Sound FX Toggle -->
+          <button class="btn-audio-toggle" id="audioToggleBtn" title="Toggle Sound FX" aria-label="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          </button>
+
+          <!-- Leasing Quick Call -->
+          <a href="tel:+918111001200" class="btn-nav-cta d-none d-sm-inline-block" data-i18n="nav_call_leasing">
+            LEASING: +91 8111001200
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       1. TOP: 3D BUILDING VIEW SCROLL CONTROLLER (CLEAN PURE FRAME SEQUENCE)
+       ========================================================================== -->
+  <section class="hero-scroll-wrapper" id="heroScrollWrapper">
+    <div class="canvas-sticky-container">
+      <canvas id="building-canvas" aria-label="3D Interactive Mall Architecture View"></canvas>
+
+      <!-- Smart Futuristic Building HUD Overlays -->
+      <div class="building-hud-overlay">
+        <!-- Top Status Pill -->
+        <div class="building-hud-top">
+          <div class="building-badge-pill">
+            <span class="pulse-dot"></span>
+            <span data-i18n="bldg_pill_status">TAPADIA CITY CENTRE • 3D ARCHITECTURAL VISION</span>
+          </div>
+          <div class="building-frame-counter" id="buildingFrameDisplay">
+            FRAME 001 / 300 • 0°
+          </div>
+        </div>
+
+        <!-- Dynamic Milestone Popups (Timed with 3D Rotation) -->
+        <div class="building-milestone-card active" id="bldgMilestone1">
+          <div class="milestone-tag">🏛️ <span data-i18n="m1_tag">WESTERN VIDARBHA’S PREMIER MALL</span></div>
+          <h2 data-i18n="m1_title">TAPADIA CITY CENTRE AMRAVATI</h2>
+          <p data-i18n="m1_desc">Opened in 2022, bringing a metro-city lifestyle experience to the heart of Amravati.</p>
+        </div>
+
+        <div class="building-milestone-card" id="bldgMilestone2">
+          <div class="milestone-tag">🛍️ <span data-i18n="m2_tag">RETAIL & SHOPPING HUB</span></div>
+          <h2 data-i18n="m2_title">75+ NATIONAL & GLOBAL BRANDS</h2>
+          <p data-i18n="m2_desc">Pantaloons, Reliance Trends, Adidas, Skechers and top lifestyle anchors under one roof.</p>
+        </div>
+
+        <div class="building-milestone-card" id="bldgMilestone3">
+          <div class="milestone-tag">🍿 <span data-i18n="m3_tag">CINEMA & GASTRONOMY</span></div>
+          <h2 data-i18n="m3_title">4-SCREEN MIRAJ CINEMAS & FOOD COURT</h2>
+          <p data-i18n="m3_desc">Barbeque Nation, KFC, Pizza Hut, Burger King & Masti Zone family gaming arena.</p>
+        </div>
+
+        <div class="building-milestone-card" id="bldgMilestone4">
+          <div class="milestone-tag">📍 <span data-i18n="m4_tag">CENTRAL CONVENIENCE</span></div>
+          <h2 data-i18n="m4_title">GOPAL NAGAR SQ, SATURNA</h2>
+          <p data-i18n="m4_desc">Multi-level basement parking, 100% central air conditioning & wheelchair accessibility.</p>
+        </div>
+
+        <!-- Bottom Scroll Hint -->
+        <div class="building-hud-bottom">
+          <div class="building-scroll-hint">
+            <span class="hint-arrow">↓</span>
+            <span data-i18n="bldg_scroll_hint">SCROLL TO ROTATE 3D MALL VIEW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT TAPADIA CITY CENTRE (AMRAVATI'S PREMIER DESTINATION)
+       ========================================================================== -->
+  <section class="about-tcc-section" id="about">
+    <div class="container">
+      <div class="row align-items-center justify-content-center text-center">
+        <div class="col-lg-10">
+          <div class="section-tag scroll-popup" data-i18n="about_tag">WESTERN VIDARBHA’S FIRST COMPLETE MODERN MALL</div>
+          <h2 class="section-title scroll-popup" data-i18n="about_title">TAPADIA CITY CENTRE (TCC) MALL</h2>
+          <p class="about-lead-text scroll-popup" data-i18n="about_lead">
+            Tapadia City Centre (TCC) Mall is Amravati's premier shopping, dining, and entertainment destination, proudly serving as Western Vidarbha’s first complete modern mall. Opened in 2022, TCC brought a metro-city lifestyle experience directly to the heart of Amravati, making it a favorite hangout spot for families, youth, and shoppers from across the region.
+          </p>
+          <p class="about-sub-text scroll-popup" data-i18n="about_sub">
+            Designed as a one-stop hub for the community, the mall perfectly balances retail, food, and fun under a single roof.
+          </p>
+
+          <div class="tcc-stats-grid">
+            <div class="stat-card scroll-popup">
+              <div class="stat-value">75+</div>
+              <div class="stat-label" data-i18n="stat_brands">National & Global Brands</div>
+              <div class="stat-sub" data-i18n="stat_brands_sub">Pantaloons, Trends, Adidas & More</div>
+            </div>
+            <div class="stat-card scroll-popup">
+              <div class="stat-value">4</div>
+              <div class="stat-label" data-i18n="stat_screens">Miraj Cinemas Screens</div>
+              <div class="stat-sub" data-i18n="stat_screens_sub">State-of-the-Art Multiplex</div>
+            </div>
+            <div class="stat-card scroll-popup">
+              <div class="stat-value">100%</div>
+              <div class="stat-label" data-i18n="stat_ac">Central Air Conditioning</div>
+              <div class="stat-sub" data-i18n="stat_ac_sub">Full Wheelchair Accessibility</div>
+            </div>
+            <div class="stat-card scroll-popup">
+              <div class="stat-value">2022</div>
+              <div class="stat-label" data-i18n="stat_year">Grand Inception</div>
+              <div class="stat-sub" data-i18n="stat_year_sub">Gopal Nagar Sq, Badnera Rd</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. DIWALI MEGA OFFER SECTION & 3D VEHICLE SCROLL (brand_splash-jpg)
+       ========================================================================== -->
+  <section class="diwali-section" id="diwali-offers">
+    <div class="container text-center">
+      <div class="diwali-badge scroll-popup" data-i18n="diwali_badge">
+        <span>🪔</span> TCC GRAND DIWALI UTSAV & MEGA BUMPER PRIZE
+      </div>
+      <h2 class="diwali-title scroll-popup" data-i18n="diwali_title">SHOP & WIN THIS FESTIVE VEHICLE!</h2>
+      <p class="diwali-subtitle scroll-popup" data-i18n="diwali_sub">
+        Western Vidarbha's Biggest Festive Celebration! Shop for ₹2,500 or more at any of TCC Amravati’s 75+ brands to enter the Grand Diwali Lucky Draw and drive home this magnificent vehicle.
+      </p>
+    </div>
+
+    <!-- 3D Scrollable Vehicle Frame Scrub Controller -->
+    <div class="vehicle-scroll-wrapper" id="vehicleScrollSection">
+      <div class="vehicle-sticky-container">
+        <canvas id="vehicle-canvas" aria-label="3D Interactive Diwali Lucky Draw Vehicle"></canvas>
+        
+        <!-- Floating Diwali HUD Callouts -->
+        <div class="vehicle-floating-hud">
+          <div class="vehicle-hud-top">
+            <div class="vehicle-hud-pill">
+              <span style="color:#d97706;">🪔</span> <span data-i18n="diwali_pill_tag">DIWALI MEGA DHAMAKA 2026</span>
+            </div>
+            <div class="vehicle-hud-pill">
+              <span style="color:#2563eb;">🔄</span> <span data-i18n="diwali_pill_scroll">SCROLL OR DRAG SLIDER TO ROTATE 360°</span>
+            </div>
+          </div>
+
+          <div class="vehicle-hud-bottom">
+            <div class="vehicle-prize-banner">
+              <h4 data-i18n="diwali_prize_title">🏆 GRAND BUMPER LUCKY DRAW</h4>
+              <p data-i18n="diwali_prize_desc">Shop ₹2,500+ across Pantaloons, Trends, Adidas & Food Court to get your VIP Raffle Coupon.</p>
+            </div>
+            <div class="vehicle-hud-pill" style="border-color:#86efac; color:#166534;">
+              <span>●</span> <span data-i18n="diwali_atrium">LIVE DISPLAY AT TCC CENTRAL ATRIUM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Vehicle Manual Controls (Slider + Buttons) -->
+    <div class="vehicle-manual-controls scroll-popup">
+      <button id="btnRotateLeft" class="btn-rotate-manual" aria-label="Rotate Left">‹ Rotate</button>
+      <input type="range" id="vehicleSlider" min="1" max="300" value="1" aria-label="Vehicle 3D Angle Scrub" title="Drag to rotate vehicle 360°" style="width: 220px; accent-color: #d97706; cursor: pointer;">
+      <button id="btnRotateRight" class="btn-rotate-manual" aria-label="Rotate Right">Rotate ›</button>
+      <button id="btnAutoSpin" class="btn-rotate-manual" aria-label="Auto Spin 360">▶ Auto Spin 360°</button>
+    </div>
+
+    <!-- Diwali Festive Perks Cards -->
+    <div class="diwali-perks-grid">
+      <div class="diwali-perk-card scroll-popup">
+        <div class="diwali-perk-icon">🚗</div>
+        <h4 data-i18n="diwali_p1_title">Bumper Vehicle Prize</h4>
+        <p data-i18n="diwali_p1_desc">One lucky winner drives home this luxury vehicle on the grand Diwali Dhanteras & Laxmi Pujan Draw.</p>
+      </div>
+
+      <div class="diwali-perk-card scroll-popup">
+        <div class="diwali-perk-icon">🪙</div>
+        <h4 data-i18n="diwali_p2_title">Daily Gold Coins</h4>
+        <p data-i18n="diwali_p2_desc">Hourly scratch cards and daily 24K gold coin winners every evening at the central mall atrium.</p>
+      </div>
+
+      <div class="diwali-perk-card scroll-popup">
+        <div class="diwali-perk-icon">🛍️</div>
+        <h4 data-i18n="diwali_p3_title">Up to 50% Festive Off</h4>
+        <p data-i18n="diwali_p3_desc">Exclusive Diwali discounts across 75+ anchor fashion stores, ethnic wear, and electronics.</p>
+      </div>
+
+      <div class="diwali-perk-card scroll-popup">
+        <div class="diwali-perk-icon">🍿</div>
+        <h4 data-i18n="diwali_p4_title">Festive Entertainment</h4>
+        <p data-i18n="diwali_p4_desc">Diwali blockbuster premieres at 4-screen Miraj Cinemas and family VR games at Masti Zone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PARTNERS SECTION (EXACT REQUESTED CONTAINER-FLUID GRID)
+       ========================================================================== -->
+  <section class="partners-section" id="partners">
+    <div class="section-header-center scroll-popup">
+      <div class="section-tag" data-i18n="partners_tag">OFFICIAL BRAND PARTNERS</div>
+      <h2 class="section-title" data-i18n="partners_title">OVER 75+ ICONIC NATIONAL & GLOBAL BRANDS</h2>
+      <p class="section-desc" data-i18n="partners_desc">
+        TCC Amravati brings together the world's most cherished fashion, lifestyle, dining, and entertainment labels under Western Vidarbha's grandest roof.
+      </p>
+    </div>
+
+    <!-- USER PROVIDED EXACT PARTNER CONTAINER-FLUID GRID -->
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-center">
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner1.jpg" alt="Partner 1" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner2.jpg" alt="Partner 2" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner3.jpg" alt="Partner 3" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner5.jpg" alt="Partner 5" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner8.jpg" alt="Partner 8" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner9.jpg" alt="Partner 9" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner11.jpg" alt="Partner 11" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner12.jpg" alt="Partner 12" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner13.jpg" alt="Partner 13" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner15.jpg" alt="Partner 15" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner18.jpg" alt="Partner 18" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner21.jpg" alt="Partner 21" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner22.jpg" alt="Partner 22" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner24.jpg" alt="Partner 24" class="img-fluid">
+        </div>
+        
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4 scroll-popup">
+          <img src="assets/img/partner/partner25.jpg" alt="Partner 25" class="img-fluid">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHAT YOU'LL FIND AT TCC AMRAVATI (HIGHLIGHTS)
+       ========================================================================== -->
+  <section class="features-section" id="highlights">
+    <div class="section-header-center scroll-popup">
+      <div class="section-tag" data-i18n="high_tag">MALL HIGHLIGHTS</div>
+      <h2 class="section-title" data-i18n="high_title">🛍️ WHAT YOU'LL FIND AT TCC AMRAVATI</h2>
+      <p class="section-desc" data-i18n="high_desc">
+        A magnificent symphony of fashion, culinary excellence, and exhilarating family entertainment engineered for unforgettable memories.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature 1: Shopping -->
+      <div class="feature-card scroll-popup">
+        <div class="feature-icon-box">🛍️</div>
+        <h3 class="feature-card-title" data-i18n="high_shop_title">Top-Tier Shopping</h3>
+        <p class="feature-card-desc" data-i18n="high_shop_desc">
+          Home to over 75 favorite national and international brands. Explore flagship anchor stores like Pantaloons, Reliance Trends, Adidas, and Skechers, alongside curated collections of apparel, jewelry, footwear, and cosmetics.
+        </p>
+        <div class="feature-badges-list">
+          <span class="f-badge">Pantaloons</span>
+          <span class="f-badge">Reliance Trends</span>
+          <span class="f-badge">Adidas</span>
+          <span class="f-badge">Skechers</span>
+          <span class="f-badge">Zudio</span>
+          <span class="f-badge">Levi's</span>
+        </div>
+      </div>
+
+      <!-- Feature 2: Dining -->
+      <div class="feature-card gold scroll-popup">
+        <div class="feature-icon-box">🍽️</div>
+        <h3 class="feature-card-title" data-i18n="high_dine_title">Delicious Dining</h3>
+        <p class="feature-card-desc" data-i18n="high_dine_desc">
+          A massive multi-cuisine food court and popular restaurants offering culinary wonders from around the globe. Indulge in feasts at Barbeque Nation, KFC, Pizza Hut, Burger King, artisanal cafes, and regional specialties.
+        </p>
+        <div class="feature-badges-list">
+          <span class="f-badge">Barbeque Nation</span>
+          <span class="f-badge">KFC</span>
+          <span class="f-badge">Pizza Hut</span>
+          <span class="f-badge">Burger King</span>
+          <span class="f-badge">Multi-Cuisine Court</span>
+        </div>
+      </div>
+
+      <!-- Feature 3: Entertainment -->
+      <div class="feature-card purple scroll-popup">
+        <div class="feature-icon-box">🎉</div>
+        <h3 class="feature-card-title" data-i18n="high_ent_title">Non-Stop Entertainment</h3>
+        <p class="feature-card-desc" data-i18n="high_ent_desc">
+          Western Vidarbha's epicenter of adrenaline and cinema! A state-of-the-art 4-screen Miraj Cinemas multiplex alongside the vibrant Masti Zone family gaming arena featuring professional bowling, bumper cars, and virtual reality games.
+        </p>
+        <div class="feature-badges-list">
+          <span class="f-badge">4-Screen Miraj Cinemas</span>
+          <span class="f-badge">Masti Zone</span>
+          <span class="f-badge">Bowling Alley</span>
+          <span class="f-badge">Bumper Cars</span>
+          <span class="f-badge">VR Simulators</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PLAN YOUR VISIT & FACILITIES
+       ========================================================================== -->
+  <section class="visit-section" id="plan-visit">
+    <div class="visit-container">
+      <div class="section-header-center scroll-popup">
+        <div class="section-tag" data-i18n="visit_tag">VISITOR GUIDE</div>
+        <h2 class="section-title" data-i18n="visit_title">📍 PLAN YOUR VISIT</h2>
+        <p class="section-desc" data-i18n="visit_desc">
+          Everything you need to know for a seamless, comfortable, and memorable outing at Tapadia City Centre Mall.
+        </p>
+      </div>
+
+      <div class="visit-split-layout">
+        <!-- Left: Info & Timings -->
+        <div class="visit-info-panel">
+          
+          <div class="info-box-item scroll-popup">
+            <div class="info-icon">📍</div>
+            <div class="info-content">
+              <h4 data-i18n="visit_loc_title">Mall Location</h4>
+              <p data-i18n="visit_loc_desc">Gopal Nagar Square, Badnera Road, Saturna, Amravati, Maharashtra 444607.</p>
+              <div class="info-subnote">WESTERN VIDARBHA LANDMARK</div>
+            </div>
+          </div>
+
+          <div class="info-box-item scroll-popup">
+            <div class="info-icon">⏰</div>
+            <div class="info-content">
+              <h4 data-i18n="visit_time_title">Operating Timings</h4>
+              <p><strong data-i18n="visit_time_desc">11:00 AM to 10:00 PM daily across all retail, food court, and entertainment zones.</strong></p>
+              <div class="info-subnote" data-i18n="visit_time_note">🛒 RELIANCE SMART OPENS EARLY: 7:00 AM • CINEMA SHOWS RUN LATE</div>
+            </div>
+          </div>
+
+          <div class="info-box-item scroll-popup">
+            <div class="info-icon">🏢</div>
+            <div class="info-content">
+              <h4 data-i18n="visit_about_title">About Tapadia City Centre</h4>
+              <p data-i18n="visit_about_desc">
+                Proudly serving as Western Vidarbha’s first complete modern mall since 2022. TCC brought a metro-city lifestyle experience directly to the heart of Amravati, making it a favorite hangout spot for families, youth, and shoppers from across the region.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Facilities & Map -->
+        <div class="facilities-grid-container">
+          <h3 data-i18n="fac_title" class="scroll-popup">WORLD-CLASS FACILITIES</h3>
+          <div class="facilities-cards">
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">🚗</span>
+              <span data-i18n="fac_1">Multi-Level Basement Parking</span>
+            </div>
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">❄️</span>
+              <span data-i18n="fac_2">Central Air Conditioning</span>
+            </div>
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">👶</span>
+              <span data-i18n="fac_3">Clean Family Rooms</span>
+            </div>
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">♿</span>
+              <span data-i18n="fac_4">Full Wheelchair Accessibility</span>
+            </div>
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">📶</span>
+              <span data-i18n="fac_5">High-Speed Guest Wi-Fi</span>
+            </div>
+            <div class="fac-item scroll-popup">
+              <span class="fac-emoji">⚡</span>
+              <span data-i18n="fac_6">EV Fast Charging Stations</span>
+            </div>
+          </div>
+
+          <!-- Interactive Map Container -->
+          <div class="map-embed-wrapper scroll-popup">
+            <iframe 
+              title="TCC Mall Google Map"
+              src="https://maps.google.com/maps?q=Tapadia+City+Centre+Mall+Amravati+Badnera+Road&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              allowfullscreen>
+            </iframe>
+            <a href="https://maps.google.com/?q=Tapadia+City+Centre+Mall+Amravati" target="_blank" rel="noopener noreferrer" class="btn-get-directions" data-i18n="btn_maps">
+              OPEN IN GOOGLE MAPS ›
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DOWNLOAD MOBILE APP SECTION (WITH PROVIDED PLAY STORE BADGE)
+       ========================================================================== -->
+  <section class="app-download-section" id="mobile-app">
+    <div class="app-banner-card">
+      <div class="app-text-col">
+        <div class="section-tag" style="margin-bottom:12px;" data-i18n="app_tag">SMART COMPANION APP</div>
+        <h3 data-i18n="app_title">EXPERIENCE TCC MALL ON YOUR SMARTPHONE</h3>
+        <p data-i18n="app_desc">
+          Download the official Tapadia City Centre App to unlock instant cinema booking, contactless food court ordering, automated parking navigation, and exclusive brand discount vouchers.
+        </p>
+
+        <ul class="app-perks-list">
+          <li><span>✓</span> <span data-i18n="app_p1">Real-Time Parking Slot Finder</span></li>
+          <li><span>✓</span> <span data-i18n="app_p2">Miraj Cinemas Ticket Booking</span></li>
+          <li><span>✓</span> <span data-i18n="app_p3">Digital Food Court Order & Pay</span></li>
+          <li><span>✓</span> <span data-i18n="app_p4">VIP Brand Discounts & Flash Deals</span></li>
+        </ul>
+
+        <div class="app-cta-row">
+          <!-- User Requested Play Store Button Image -->
+          <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" class="btn-playstore-img" aria-label="Download on Google Play Store">
+            <img src="assets/img/playstore.png" onerror="this.src='https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png'" alt="Download on Google Play Store">
+          </a>
+
+          <div class="app-qr-box">
+            <svg class="app-qr-svg" viewBox="0 0 24 24" fill="#000">
+              <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-5 5h2v3h-2v-3zm3 0h5v3h-5v-3zm-3-5h3v2h-3v-2zm5 2h3v3h-3v-3z"/>
+            </svg>
+            <div class="app-qr-text" data-i18n="app_scan">
+              SCAN QR CODE FOR FAST DOWNLOAD
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Futuristic Phone Screen Mockup -->
+      <div class="app-phone-mockup">
+        <div class="phone-screen-card">
+          <div class="phone-screen-header">
+            <span>TCC APP v2.4</span>
+            <span style="color:#16a34a;">● CONNECTED</span>
+          </div>
+          <div class="phone-screen-body">
+            <div class="phone-tile">
+              <h5>Miraj Cinemas</h5>
+              <p>4-Screen Multiplex • Pushback Seats</p>
+            </div>
+            <div class="phone-tile">
+              <h5>Masti Zone Arcade</h5>
+              <p>Bowling Lanes & VR Available</p>
+            </div>
+            <div class="phone-tile">
+              <h5>Smart Basement Parking</h5>
+              <p style="color:#16a34a;">Level -1: 84 Slots Vacant</p>
+            </div>
+          </div>
+          <div style="font-size:11px; color:#64748b; text-align:center;">
+            TAPADIA CITY CENTRE • AMRAVATI
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT, LEASING & HELPDESK SECTION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="section-header-center">
+      <div class="section-tag" data-i18n="contact_tag">COMMUNICATION DESK</div>
+      <h2 class="section-title" data-i18n="contact_title">CONNECT WITH TAPADIA CITY CENTRE</h2>
+      <p class="section-desc" data-i18n="contact_desc">
+        For retail brand leasing queries, kiosk allocations, event partnerships, or customer assistance, our management team is ready to assist.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Direct Calling Quick Cards -->
+      <div class="contact-quick-cards">
+        
+        <div class="c-card leasing">
+          <div class="c-card-left">
+            <div class="c-card-icon">💼</div>
+            <div class="c-card-meta">
+              <h4 data-i18n="c_leasing_title">Leasing & Retail Queries</h4>
+              <a href="tel:+918111001200" class="c-card-phone">+91 8111001200</a>
+            </div>
+          </div>
+          <a href="tel:+918111001200" class="btn-call-pill" data-i18n="c_btn_call">CALL NOW</a>
+        </div>
+
+        <div class="c-card">
+          <div class="c-card-left">
+            <div class="c-card-icon">🎧</div>
+            <div class="c-card-meta">
+              <h4 data-i18n="c_helpdesk_title">Customer Helpdesk</h4>
+              <a href="tel:+919422655830" class="c-card-phone">+91 9422655830</a>
+            </div>
+          </div>
+          <a href="tel:+919422655830" class="btn-call-pill" data-i18n="c_btn_call">CALL NOW</a>
+        </div>
+
+        <div class="c-card" style="border-color: #bbf7d0;">
+          <div class="c-card-left">
+            <div class="c-card-icon" style="background: #f0fdf4;">💬</div>
+            <div class="c-card-meta">
+              <h4 data-i18n="c_whatsapp_title">Official WhatsApp Desk</h4>
+              <a href="https://wa.me/918111001200?text=Hello%20TCC%20Mall%20Amravati%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="c-card-phone" style="color:#16a34a;">+91 8111001200</a>
+            </div>
+          </div>
+          <a href="https://wa.me/918111001200?text=Hello%20TCC%20Mall%20Amravati%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="btn-call-pill" style="background:#25d366; color:#fff;" data-i18n="c_btn_chat">CHAT</a>
+        </div>
+
+        <!-- Google Reviews Highlight Card -->
+        <div class="c-card" style="border-color: #fde68a;">
+          <div class="c-card-left">
+            <div class="c-card-icon" style="background: #fef3c7;">⭐</div>
+            <div class="c-card-meta">
+              <h4 data-i18n="c_rate_title">Amravati's #1 Rated Mall</h4>
+              <span style="color:#d97706; font-size:14px; font-weight:700;">★★★★★ 4.5 / 5 on Google</span>
+            </div>
+          </div>
+          <a href="https://www.google.com/search?sca_esv=74f3a649a61acb9d&sxsrf=APpeQnsgi_B2YSyQDGs9zVljbh3llmQPRQ:1793066492837&q=tapadia+city+centre+mall+reviews&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8h4iTTqNMPYiYxLnu08f-UvPGqjkfnekb6skos8SX1itllPsfNXlunLMihS--W5-CjoXCjkYaaP_p8-OcOmWDtl6-x6M_730yARKgIc47P9uZGclw%3D%3D&sa=X&ved=2ahUKEwiDu_SajdmXAxVpzDgGHT8dLvsQyNoBKAB6BAgdEAA&ictx=1&biw=1536&bih=730&dpr=1.25" target="_blank" rel="noopener noreferrer" class="btn-call-pill" style="background:#f59e0b; color:#fff;" data-i18n="c_btn_rate">RATE US</a>
+        </div>
+
+      </div>
+
+      <!-- Interactive Inquiry Form -->
+      <div class="contact-form-box">
+        <h3 data-i18n="form_title">TRANSMIT DIRECT INQUIRY</h3>
+        <p data-i18n="form_desc">Send your brand proposal, store leasing query, or event request directly to TCC management.</p>
+
+        <form id="tccInquiryForm">
+          <div class="form-group">
+            <label class="form-label" for="fullName" data-i18n="form_name">Your Full Name / Company</label>
+            <input type="text" id="fullName" name="fullName" class="form-control-cyber" placeholder="e.g. Rahul Sharma / Retail Brands Pvt Ltd" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone" data-i18n="form_phone">Contact Mobile Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control-cyber" placeholder="e.g. +91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inquiryType" data-i18n="form_type">Inquiry Classification</label>
+            <select id="inquiryType" name="inquiryType" class="form-control-cyber">
+              <option value="leasing">Store & Retail Leasing (+91 8111001200)</option>
+              <option value="kiosk">Atrium Kiosk & Pop-Up Space</option>
+              <option value="helpdesk">Customer Care & Helpdesk (+91 9422655830)</option>
+              <option value="event">Mall Event & Brand Activation</option>
+              <option value="feedback">Customer Experience & Review</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message" data-i18n="form_msg">Detailed Requirement</label>
+            <textarea id="message" name="message" rows="3" class="form-control-cyber" placeholder="Specify brand, required floor area (sq. ft.), or feedback..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-form" data-i18n="form_btn">TRANSMIT INQUIRY TO MANAGEMENT</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FLOATING ACTIONS DOCK (WHATSAPP, CONTACT, RATE US)
+       ========================================================================== -->
+  <div class="floating-actions-dock" role="region" aria-label="Quick Actions">
+    <!-- Rate Us on Google -->
+    <a href="https://www.google.com/search?sca_esv=74f3a649a61acb9d&sxsrf=APpeQnsgi_B2YSyQDGs9zVljbh3llmQPRQ:1793066492837&q=tapadia+city+centre+mall+reviews&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_8h4iTTqNMPYiYxLnu08f-UvPGqjkfnekb6skos8SX1itllPsfNXlunLMihS--W5-CjoXCjkYaaP_p8-OcOmWDtl6-x6M_730yARKgIc47P9uZGclw%3D%3D&sa=X&ved=2ahUKEwiDu_SajdmXAxVpzDgGHT8dLvsQyNoBKAB6BAgdEAA&ictx=1&biw=1536&bih=730&dpr=1.25" target="_blank" rel="noopener noreferrer" class="fab-btn fab-rate" title="Rate Us on Google" aria-label="Rate Us on Google Reviews">
+      <span class="stars">★★★★★</span>
+      <span class="fab-text" data-i18n="fab_rate">Rate Us</span>
+    </a>
+
+    <!-- WhatsApp Instant Chat -->
+    <a href="https://wa.me/918111001200?text=Hello%20TCC%20Mall%20Amravati%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="fab-btn fab-whatsapp" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.031 2C6.504 2 2 6.505 2 12.032c0 1.904.53 3.69 1.458 5.23L2 22l4.908-1.424a10.02 10.02 0 0 0 5.123 1.456h.005c5.524 0 10.03-4.505 10.03-10.032 0-5.526-4.506-10-10.035-10zm5.83 14.283c-.244.685-1.42 1.309-1.97 1.393-.52.08-1.2.115-3.87-1-3.23-1.348-5.32-4.63-5.48-4.846-.16-.217-1.31-1.745-1.31-3.328 0-1.583.827-2.363 1.12-2.684.293-.32.64-.4.854-.4.214 0 .427.002.614.01.198.01.464-.075.727.556.27.647.92 2.247 1 2.41.08.163.134.354.027.57-.107.218-.16.355-.32.544-.16.19-.335.424-.48.57-.16.16-.327.334-.14.655.187.32.83 1.368 1.78 2.213 1.22 1.086 2.25 1.423 2.57 1.583.32.16.507.136.694-.08.187-.215.8-.934 1.014-1.254.214-.32.427-.267.72-.16.294.106 1.867.88 2.187 1.04.32.16.534.24.614.373.08.134.08.775-.164 1.46z"/>
+      </svg>
+      <span class="fab-text" data-i18n="fab_whatsapp">WhatsApp</span>
+    </a>
+
+    <!-- Quick Dial Contact -->
+    <a href="tel:+918111001200" class="fab-btn fab-contact" title="Call TCC Leasing" aria-label="Call TCC Leasing">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span class="fab-text" data-i18n="fab_contact">Contact</span>
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER (CLEAN LIGHT DESIGN)
+       ========================================================================== -->
+  <footer class="tcc-footer">
+    <div class="footer-container">
+      <div class="footer-col-brand">
+        <img src="assets/img/tcc-logo.svg" alt="Tapadia City Centre" style="height:42px; width:auto;">
+        <p data-i18n="about_lead">
+          Tapadia City Centre (TCC) Mall is Amravati's premier shopping, dining, and entertainment destination, proudly serving as Western Vidarbha’s first complete modern mall since 2022.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">EXPLORE</h4>
+        <ul class="footer-links">
+          <li><a href="#heroScrollWrapper" data-i18n="nav_3d">3D Building Tour</a></li>
+          <li><a href="#diwali-offers" data-i18n="nav_diwali">Diwali Mega Offer</a></li>
+          <li><a href="#partners" data-i18n="nav_partners">Brand Directory</a></li>
+          <li><a href="#highlights" data-i18n="nav_shopping">Miraj Cinemas</a></li>
+          <li><a href="#highlights">Masti Zone Gaming</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">VISIT</h4>
+        <ul class="footer-links">
+          <li><a href="#plan-visit" data-i18n="visit_time_title">Mall Timings</a></li>
+          <li><a href="#plan-visit" data-i18n="fac_1">Basement Parking</a></li>
+          <li><a href="#plan-visit" data-i18n="btn_maps">Directions & Map</a></li>
+          <li><a href="#mobile-app" data-i18n="nav_app">Download App</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">CONTACT HELPLINES</h4>
+        <ul class="footer-links">
+          <li><strong>Leasing Queries:</strong> <a href="tel:+918111001200">+91 8111001200</a></li>
+          <li><strong>Helpdesk:</strong> <a href="tel:+919422655830">+91 9422655830</a></li>
+          <li><strong>Location:</strong> Gopal Nagar Square, Badnera Road, Saturna, Amravati, Maharashtra 444607</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div>&copy; 2022-2026 Tapadia City Centre (TCC) Amravati. All Rights Reserved.</div>
+      <div>Western Vidarbha's Premier Modern Lifestyle Hub</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/security.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "tcc-smart-website",
+  "version": "2.4.0",
+  "description": "Tapadia City Centre (TCC) Mall Amravati - Futuristic 3D Scroll-Controlled Web Experience",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "tapadia-city-centre",
+    "amravati",
+    "mall",
+    "3d-scroll",
+    "futuristic",
+    "nodejs"
+  ],
+  "author": "TCC Amravati",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.21.2"
+  }
+}
